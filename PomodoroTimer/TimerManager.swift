@@ -9,11 +9,12 @@
 import Foundation
 
 struct TimerManager {
-    var duration = Duration.init(minutes: 30, seconds: 0)
-    var isRunning = false
-    var progress = Progress()
-    var rounds = 1 // counts finished (timer) rounds
-    var mode = Mode.working // timer starts in "working" mode
+    private var duration = Duration.init(minutes: 30)
+    private var isRunning = false
+    private var progress = Progress()
+    private var rounds = 1 // counts finished (timer) rounds
+    private var mode = Mode.working // timer starts in "working" mode
+    private var breakDuration = 5
     
     enum Mode {
         case working, resting
@@ -39,17 +40,21 @@ struct TimerManager {
                 resetTimer()
             }
         case(_, _):
-            self.mode == .working ? progress.update(val: 30*60): progress.update(val: 2) // mode-checking?
+            self.mode == .working ? progress.update(val: 30*60): progress.update(val: breakDuration * 60) // 30 = auto. set working duration
             duration.decrease()
         }
-        
     }
+    
+    
+    private var shortBreak = 5
+    private var longBreak = 20
     
     mutating func startBreak() {
         mode = .resting
         progress.reset()
         // starts long break after every 4 completed rounds
-        rounds % 4 == 0 ? duration.set(minutes: 0, seconds: 4) : duration.set(minutes: 0, seconds: 2)
+        rounds % 4 == 0 ? (breakDuration = longBreak) : (breakDuration = shortBreak)
+        duration.set(minutes: breakDuration)
     }
     
     mutating func resetTimer() {
@@ -69,6 +74,18 @@ struct TimerManager {
     
     func getDuration() -> (Int, Int) {
         (duration.minutes, duration.seconds)
+    }
+    
+    func running() -> Bool {
+        isRunning
+    }
+    
+    func getMode() -> Mode {
+        mode
+    }
+    
+    func getRounds() -> Int {
+        rounds
     }
     
 }
