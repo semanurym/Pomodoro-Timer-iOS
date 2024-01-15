@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-// duration 5 sec. for test purposes
+
 struct TimerView : View {
     
     @State var timerManager = TimerManager()
@@ -17,7 +17,7 @@ struct TimerView : View {
             VStack(spacing: 30){
                 Text(message)
                     .font(.system(size: 20)).bold()
-                Text("Round \(timerManager.rounds)")
+                Text("Round \(timerManager.getRounds())")
                 progressRing
                 buttons
             }
@@ -25,7 +25,7 @@ struct TimerView : View {
     }
     
     var message : String {
-        switch timerManager.mode {
+        switch timerManager.getMode() {
         case .working:
             return "Focus on your work. 🗂️"
         case .resting:
@@ -36,14 +36,14 @@ struct TimerView : View {
     private func startTimer() {
         timer?.invalidate() // invalidate former timer if existent
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if timerManager.isRunning {
+            if timerManager.running() {
                 timerManager.updateTimer()
             }
         }
     }
     
-    // all below: UI Elements
-
+    // all below: components used for UI
+    
     private var progressRing : some View {
         ZStack(alignment: .center) {
             basisCircle
@@ -92,7 +92,7 @@ struct TimerView : View {
         }
         .cornerRadius(100)
         .foregroundColor(.green)
-        .disabled(timerManager.isRunning)
+        .disabled(timerManager.running())
     }
     
     private var resetButton : some View {
