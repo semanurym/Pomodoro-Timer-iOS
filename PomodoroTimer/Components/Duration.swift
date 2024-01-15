@@ -9,12 +9,20 @@ import Foundation
 
 class Duration{
     var minutes : Int
-    var seconds : Int
+    var seconds = 0
+    // private final var workDuration : Int
     
-    init(minutes: Int, seconds: Int) {
+    init(minutes: Int) {
         self.minutes = minutes
-        self.seconds = seconds
     }
+    
+    // INIT (NEW): SET SECONDS INITIAL TO 0
+    /*
+     init(minutes: Int, seconds: Int) {
+     self.minutes = minutes
+     self.seconds = seconds
+     }
+     */
     
     func decrease() {
         switch(minutes, seconds) {
@@ -28,16 +36,17 @@ class Duration{
         }
     }
     
-    func set(minutes: Int, seconds: Int) {
+    func reset() {
+        self.set(minutes: 30) // minutes/seconds value for testing
+    }
+    
+    func set(minutes: Int) {
         self.minutes = minutes
-        self.seconds = seconds
+        self.seconds = 0
     }
     
     /// resets timer to duration specified for working mode
-    func reset() {
-        self.set(minutes: 0, seconds: 5) // minutes/seconds value for testing
-    }
-    
+    ///
     func formatTime() -> String {
         String(format:"%02d:%02d", self.minutes, self.seconds)
     }
@@ -45,5 +54,6 @@ class Duration{
     func getTotalSeconds() -> Double {
         Double(minutes*60+seconds)
     }
+    
     
 }
