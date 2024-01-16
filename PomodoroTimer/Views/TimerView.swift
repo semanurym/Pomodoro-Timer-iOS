@@ -1,6 +1,6 @@
 //
 //  TimerView.swift
-//  Simple Timer
+//  PomodoroTimer
 //
 //  Created by Semanur Yildirim on 14.01.24.
 //

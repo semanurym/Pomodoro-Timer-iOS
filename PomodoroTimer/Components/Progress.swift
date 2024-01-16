@@ -1,6 +1,6 @@
 //
 //  Progress.swift
-//  Simple Timer
+//  PomodoroTimer
 //
 //  Created by Semanur Yildirim on 15.01.24.
 //

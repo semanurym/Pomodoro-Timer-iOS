@@ -1,6 +1,6 @@
 //
 //  Duration.swift
-//  Simple Timer
+//  PomodoroTimer
 //
 //  Created by Semanur Yildirim on 11.01.24.
 //
