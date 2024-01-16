@@ -96,7 +96,6 @@
 			children = (
 				BDB4D7992B55E30E004F40A2 /* Components */,
 				BDB4D7982B55E2D4004F40A2 /* Views */,
-				BDB4D7902B55E17B004F40A2 /* TimerManager.swift */,
 				BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */,
 				BDB4D76A2B55E0AF004F40A2 /* Preview Content */,
 				BDB4D7642B55E0AC004F40A2 /* PomodoroTimerApp.swift */,
@@ -124,6 +123,7 @@
 		BDB4D7992B55E30E004F40A2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BDB4D7902B55E17B004F40A2 /* TimerManager.swift */,
 				BDB4D7922B55E188004F40A2 /* Duration.swift */,
 				BDB4D7942B55E1A0004F40A2 /* Progress.swift */,
 			);
