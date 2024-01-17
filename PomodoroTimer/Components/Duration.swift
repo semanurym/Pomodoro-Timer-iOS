@@ -16,14 +16,6 @@ class Duration{
         self.minutes = minutes
     }
     
-    // INIT (NEW): SET SECONDS INITIAL TO 0
-    /*
-     init(minutes: Int, seconds: Int) {
-     self.minutes = minutes
-     self.seconds = seconds
-     }
-     */
-    
     func decrease() {
         switch(minutes, seconds) {
         case(0,0):
@@ -36,8 +28,9 @@ class Duration{
         }
     }
     
+    /// resets duration to initial working(!) duration
     func reset() {
-        self.set(minutes: 30) // minutes/seconds value for testing
+        self.set(minutes: 30) // always resets to initial working duration (30 min)
     }
     
     func set(minutes: Int) {
@@ -45,8 +38,6 @@ class Duration{
         self.seconds = 0
     }
     
-    /// resets timer to duration specified for working mode
-    ///
     func formatTime() -> String {
         String(format:"%02d:%02d", self.minutes, self.seconds)
     }
