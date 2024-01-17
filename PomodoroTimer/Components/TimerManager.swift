@@ -9,12 +9,11 @@
 import Foundation
 
 struct TimerManager {
-    private var duration = Duration.init(minutes: 30)
+    private var duration = Duration.init(minutes: 30) // initial working duration of 30 minutes
     private var isRunning = false
     private var progress = Progress()
-    private var rounds = 1 // counts finished (timer) rounds
+    private var rounds = 1 // counts finished working intervals
     private var mode = Mode.working // timer starts in "working" mode
-    private var breakDuration = 5
     
     enum Mode {
         case working, resting
@@ -40,23 +39,25 @@ struct TimerManager {
                 resetTimer()
             }
         case(_, _):
-            self.mode == .working ? progress.update(val: 30*60): progress.update(val: breakDuration * 60) // 30 = auto. set working duration
+            self.mode == .working ? progress.update(val: 30*60): progress.update(val: breakDuration * 60)
             duration.decrease()
         }
     }
     
     
+    private var breakDuration : Int = 5 // holds break duration. initial value: short break duration
     private var shortBreak = 5
     private var longBreak = 20
     
+    /// starts short break after each single,  and long break after every 4 working intervals
     mutating func startBreak() {
         mode = .resting
         progress.reset()
-        // starts long break after every 4 completed rounds
-        rounds % 4 == 0 ? (breakDuration = longBreak) : (breakDuration = shortBreak)
+        (rounds - 1) % 4 == 0 ? (breakDuration = longBreak) : (breakDuration = shortBreak)
         duration.set(minutes: breakDuration)
     }
     
+    /// resets all specifications of the timer to the initial configurations of the working mode
     mutating func resetTimer() {
         isRunning = false
         duration.reset()
@@ -87,6 +88,15 @@ struct TimerManager {
     func getRounds() -> Int {
         rounds
     }
+    
+    func getBreakDuration() -> Int {
+        breakDuration
+    }
+    
+    func inShortBreak() -> Bool {
+        breakDuration == shortBreak
+    }
+    
     
 }
 
