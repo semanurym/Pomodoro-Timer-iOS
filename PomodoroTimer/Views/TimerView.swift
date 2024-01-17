@@ -20,8 +20,6 @@ struct TimerView : View {
                 Text("Round \(timerManager.getRounds())")
                 progressRing
                 buttons
-                
-                
             }
         }
     }
@@ -31,7 +29,12 @@ struct TimerView : View {
         case .working:
             return "Focus on your work. 🗂️"
         case .resting:
-            return "Time for a coffee! ☕️"
+            switch timerManager.inShortBreak() {
+            case true:
+                return "Grab a quick coffee!☕️"
+            default:
+                return "Time for a long refreshing timeout. 🏖️"
+            }
         }
     }
     
@@ -61,10 +64,7 @@ struct TimerView : View {
             HStack(spacing: 50) {
                 setStateButton
                     .cornerRadius(100)
-                /*
-                startButton
-                resetButton
-                */
+                    .buttonStyle(.borderedProminent)
             }
             resetRoundsButton
         }
@@ -90,43 +90,25 @@ struct TimerView : View {
             .animation(.easeOut, value: timerManager.getProgress())
     }
     
-    // buttons: start/reset/resetRounds
     
+    // buttons: setState/resetRounds
+    /// dynamic button to set the timer's state: starts if it's not running, else resets.
     private var setStateButton : some View  {
         switch timerManager.running() { // check state of timer: running (true/false)
         case true:
             Button("Reset"){    // running = true: button "reset" to reset timer to working(!) mode with it's initial duration
                 timerManager.resetTimer()
             }
-            .foregroundColor(.red)
+            .tint(.red)
         case false:
             Button("Start"){    // running = false: button "start" to start working mode
                 timerManager.startTimer()
                 startTimer()
             }
-            .foregroundColor(.green)
+            .tint(.green)
         }
     }
     
-    /* // replaced by dynamic button!
-    private var startButton : some View {
-        Button("Start") {
-            timerManager.startTimer()
-            startTimer()
-        }
-        .cornerRadius(100)
-        .foregroundColor(.green)
-        .disabled(timerManager.running())
-    }
-    
-    private var resetButton : some View {
-        Button("Reset") {
-            timerManager.resetTimer()
-        }
-        .cornerRadius(100)
-        .foregroundColor(.red)
-    }
-    */
     private var resetRoundsButton : some View {
         Button("Reset Rounds") {
             timerManager.resetRounds()
