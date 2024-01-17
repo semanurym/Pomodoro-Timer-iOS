@@ -20,6 +20,8 @@ struct TimerView : View {
                 Text("Round \(timerManager.getRounds())")
                 progressRing
                 buttons
+                
+                
             }
         }
     }
@@ -57,8 +59,12 @@ struct TimerView : View {
     private var buttons : some View {
         VStack(spacing: 30){
             HStack(spacing: 50) {
+                setStateButton
+                    .cornerRadius(100)
+                /*
                 startButton
                 resetButton
+                */
             }
             resetRoundsButton
         }
@@ -85,6 +91,24 @@ struct TimerView : View {
     }
     
     // buttons: start/reset/resetRounds
+    
+    private var setStateButton : some View  {
+        switch timerManager.running() { // check state of timer: running (true/false)
+        case true:
+            Button("Reset"){    // running = true: button "reset" to reset timer to working(!) mode with it's initial duration
+                timerManager.resetTimer()
+            }
+            .foregroundColor(.red)
+        case false:
+            Button("Start"){    // running = false: button "start" to start working mode
+                timerManager.startTimer()
+                startTimer()
+            }
+            .foregroundColor(.green)
+        }
+    }
+    
+    /* // replaced by dynamic button!
     private var startButton : some View {
         Button("Start") {
             timerManager.startTimer()
@@ -102,7 +126,7 @@ struct TimerView : View {
         .cornerRadius(100)
         .foregroundColor(.red)
     }
-    
+    */
     private var resetRoundsButton : some View {
         Button("Reset Rounds") {
             timerManager.resetRounds()
