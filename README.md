@@ -15,6 +15,6 @@ For iOS devices 📱
 
 
 ### Features coming soon: 
-- **Individually** setting the needed time for working mode, short and long break 💭
+- **Individually** setting the needed time for working mode, short and long breaks 💭
 - **Setting up a to do list** to have an overview of your plans 🗒️
 - and more.. 🔮
