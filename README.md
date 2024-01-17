@@ -1,6 +1,7 @@
 # ⏰ Pomodoro Timer ⏰
 
 A minimalist Pomodoro Timer for effective time management!
+For iOS devices 📱
 
 ### Features:
 - **Working duration of 30 minutes** for productive sprints 💡
