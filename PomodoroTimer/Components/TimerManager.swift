@@ -12,7 +12,7 @@ struct TimerManager {
     private var duration = Duration.init(minutes: 30) // initial working duration of 30 minutes
     private var isRunning = false
     private var progress = Progress()
-    private var rounds = 1 // counts finished working intervals
+    private var sessions = 1 // counts finished working intervals
     private var mode = Mode.working // timer starts in "working" mode
     
     enum Mode {
@@ -33,7 +33,7 @@ struct TimerManager {
             isRunning = false
             switch(mode) {
             case(.working):
-                rounds += 1
+                sessions += 1
                 startBreak()
             case(.resting):
                 resetTimer()
@@ -53,7 +53,7 @@ struct TimerManager {
     mutating func startBreak() {
         mode = .resting
         progress.reset()
-        (rounds - 1) % 4 == 0 ? (breakDuration = longBreak) : (breakDuration = shortBreak)
+        (sessions - 1) % 4 == 0 ? (breakDuration = longBreak) : (breakDuration = shortBreak)
         duration.set(minutes: breakDuration)
     }
     
@@ -65,8 +65,8 @@ struct TimerManager {
         mode = .working
     }
     
-    mutating func resetRounds() {
-        rounds = 1
+    mutating func resetSessions() {
+        sessions = 1
     }
     
     func formatTime() -> String {
@@ -85,8 +85,8 @@ struct TimerManager {
         mode
     }
     
-    func getRounds() -> Int {
-        rounds
+    func getSessions() -> Int {
+        sessions
     }
     
     func getBreakDuration() -> Int {

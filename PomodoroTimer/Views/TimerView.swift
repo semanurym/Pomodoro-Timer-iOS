@@ -17,7 +17,7 @@ struct TimerView : View {
             VStack(spacing: 30){
                 Text(message)
                     .font(.system(size: 20)).bold()
-                Text("Round \(timerManager.getRounds())")
+                Text("Session \(timerManager.getSessions())")
                 progressRing
                 buttons
             }
@@ -66,7 +66,7 @@ struct TimerView : View {
                     .cornerRadius(100)
                     .buttonStyle(.borderedProminent)
             }
-            resetRoundsButton
+            resetSessionsButton
         }
         .buttonStyle(.bordered)
         .font(.system(size: 20))
@@ -91,7 +91,7 @@ struct TimerView : View {
     }
     
     
-    // buttons: setState/resetRounds
+    // buttons: setState/resetSessions
     /// dynamic button to set the timer's state: starts if it's not running, else resets.
     private var setStateButton : some View  {
         switch timerManager.running() { // check state of timer: running (true/false)
@@ -109,9 +109,9 @@ struct TimerView : View {
         }
     }
     
-    private var resetRoundsButton : some View {
-        Button("Reset Rounds") {
-            timerManager.resetRounds()
+    private var resetSessionsButton : some View {
+        Button("Reset Sessions") {
+            timerManager.resetSessions()
         }
         .font(.system(size: 15))
         .cornerRadius(100)
