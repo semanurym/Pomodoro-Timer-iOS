@@ -27,9 +27,7 @@ struct TimerView : View {
     var message : String {
         switch timerManager.getMode() {
         case .working:
-            if timerManager.running() {
-                return "Focus on your work. 🗂️"
-            } else { return "Start a session! 🚀" }
+            return (timerManager.running() ? "Focus on your work. 🗂️" : "Start a session! 🚀" )
         case .resting:
             switch timerManager.inShortBreak() {
             case true:
