@@ -78,16 +78,12 @@ struct TimerView : View {
     
     private var buttons : some View {
         VStack(spacing: 30){
-            HStack(spacing: 50) {
-                setStateButton
-                    .cornerRadius(100)
-                    .buttonStyle(.borderedProminent)
-            }
+            setStateButton
+                .cornerRadius(100)
+                .buttonStyle(.borderedProminent)
             resetSessionsButton
         }
-        .buttonStyle(.bordered)
-        .font(.system(size: 20))
-        .bold()
+        .font(.system(size: 20, weight: .bold))
         
     }
     
@@ -117,13 +113,13 @@ struct TimerView : View {
             Button("Reset"){    // running = true: button "reset" to reset timer to working(!) mode with it's initial duration
                 timerManager.resetTimer()
             }
-            .tint(.red)
+            .tint(Color.pink.opacity(0.9))
         case false:
             Button("Start"){    // running = false: button "start" to start working mode
                 timerManager.startTimer()
                 startTimer()
             }
-            .tint(.green)
+            .tint(Color.pink)
         }
     }
     
@@ -131,9 +127,10 @@ struct TimerView : View {
         Button("Reset Sessions") {
             timerManager.resetSessions()
         }
-        .font(.system(size: 15))
+        .font(.system(size: 15, weight: .bold))
         .cornerRadius(100)
-        .bold()
+        .buttonStyle(.bordered)
+        .tint(Color.pink)
     }
     
 }
