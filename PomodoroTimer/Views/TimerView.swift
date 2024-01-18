@@ -84,7 +84,7 @@ struct TimerView : View {
     private var progressBar : some View {
         Circle()
             .trim(from:0, to: timerManager.getProgress())
-            .stroke(Color.pink.opacity(0.3), style: StrokeStyle(lineWidth: 10, lineCap: .round))
+            .stroke(Color.pink.opacity(0.5), style: StrokeStyle(lineWidth: 10, lineCap: .round)) 
             .frame(width: 230)
             .rotationEffect(Angle(degrees: 270))
             .animation(.easeOut, value: timerManager.getProgress())
