@@ -23,6 +23,7 @@ struct TimerView : View {
                 }
                 buttons
             }
+            .monospaced()
         }
     }
     private func startTimer() {
@@ -40,7 +41,7 @@ struct TimerView : View {
         Text(message)
             .font(.system(size: 15))
             .bold()
-            .monospaced()
+            // .monospaced()
             .foregroundStyle(Color.gray)
     }
     
@@ -61,7 +62,7 @@ struct TimerView : View {
     private var sessionView : some View {
         Text("SESSION \(timerManager.getSessions())")
             .font(.system(size: 13))
-            .monospaced()
+            //.monospaced()
             .foregroundStyle(Color.gray)
     }
     
