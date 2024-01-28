@@ -35,13 +35,12 @@ struct TimerView : View {
         }
     }
     
-    // all below: components used for UI
+    // MARK: - UI components
     
     private var stateMessage : some View {
         Text(message)
             .font(.system(size: 15))
             .bold()
-            // .monospaced()
             .foregroundStyle(Color.gray)
     }
     
@@ -62,7 +61,6 @@ struct TimerView : View {
     private var sessionView : some View {
         Text("SESSION \(timerManager.getSessions())")
             .font(.system(size: 13))
-            //.monospaced()
             .foregroundStyle(Color.gray)
     }
     
@@ -88,7 +86,7 @@ struct TimerView : View {
         
     }
     
-    // components used for the progress ring
+    // components used for the progress ring:
     private var basisCircle : some View {
         Circle()
             .stroke(Color.gray.opacity(0.3), style: StrokeStyle(lineWidth: 10, lineCap: .round))
@@ -105,7 +103,7 @@ struct TimerView : View {
     }
     
     
-    // buttons: setState/resetSessions
+    // MARK: - Buttons
     
     /// dynamic button to set the timer's state: starts if it's not running, else resets.
     private var setStateButton : some View  {
