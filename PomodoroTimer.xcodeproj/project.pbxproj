@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BDB4D7652B55E0AC004F40A2 /* PomodoroTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4D7642B55E0AC004F40A2 /* PomodoroTimerApp.swift */; };
-		BDB4D7672B55E0AC004F40A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4D7662B55E0AC004F40A2 /* ContentView.swift */; };
 		BDB4D7692B55E0AF004F40A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */; };
 		BDB4D76C2B55E0AF004F40A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB4D76B2B55E0AF004F40A2 /* Preview Assets.xcassets */; };
 		BDB4D78F2B55E0E3004F40A2 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4D78E2B55E0E3004F40A2 /* TimerView.swift */; };
@@ -38,7 +37,6 @@
 		BD4B08002B574DCD00A99172 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BDB4D7612B55E0AC004F40A2 /* PomodoroTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB4D7642B55E0AC004F40A2 /* PomodoroTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerApp.swift; sourceTree = "<group>"; };
-		BDB4D7662B55E0AC004F40A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDB4D76B2B55E0AF004F40A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BDB4D7712B55E0AF004F40A2 /* PomodoroTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,8 +94,8 @@
 		BDB4D7632B55E0AC004F40A2 /* PomodoroTimer */ = {
 			isa = PBXGroup;
 			children = (
+				BDB4D78E2B55E0E3004F40A2 /* TimerView.swift */,
 				BDB4D7992B55E30E004F40A2 /* Components */,
-				BDB4D7982B55E2D4004F40A2 /* Views */,
 				BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */,
 				BDB4D76A2B55E0AF004F40A2 /* Preview Content */,
 				BDB4D7642B55E0AC004F40A2 /* PomodoroTimerApp.swift */,
@@ -111,15 +109,6 @@
 				BDB4D76B2B55E0AF004F40A2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		BDB4D7982B55E2D4004F40A2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BDB4D78E2B55E0E3004F40A2 /* TimerView.swift */,
-				BDB4D7662B55E0AC004F40A2 /* ContentView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		BDB4D7992B55E30E004F40A2 /* Components */ = {
@@ -266,7 +255,6 @@
 				BDB4D7932B55E188004F40A2 /* Duration.swift in Sources */,
 				BDB4D78F2B55E0E3004F40A2 /* TimerView.swift in Sources */,
 				BDB4D7912B55E17B004F40A2 /* TimerManager.swift in Sources */,
-				BDB4D7672B55E0AC004F40A2 /* ContentView.swift in Sources */,
 				BDB4D7652B55E0AC004F40A2 /* PomodoroTimerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
