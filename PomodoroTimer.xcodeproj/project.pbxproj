@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD1BBDB32BA669D0001C0E20 /* Achievement_Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD1BBDB22BA669D0001C0E20 /* Achievement_Bell.wav */; };
+		BD1BBDB72BA67310001C0E20 /* Break_End.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD1BBDB62BA67310001C0E20 /* Break_End.wav */; };
 		BDB4D7652B55E0AC004F40A2 /* PomodoroTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4D7642B55E0AC004F40A2 /* PomodoroTimerApp.swift */; };
 		BDB4D7692B55E0AF004F40A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */; };
 		BDB4D76C2B55E0AF004F40A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB4D76B2B55E0AF004F40A2 /* Preview Assets.xcassets */; };
@@ -34,7 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD1BBDB22BA669D0001C0E20 /* Achievement_Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Achievement_Bell.wav; path = "../../../Coding Projects/Sound Effects/Achievement_Bell.wav"; sourceTree = "<group>"; };
+		BD1BBDB62BA67310001C0E20 /* Break_End.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Break_End.wav; path = ../../../../Downloads/Break_End.wav; sourceTree = "<group>"; };
 		BD4B08002B574DCD00A99172 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BD9D1A302B6B924C00E62BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BDB4D7612B55E0AC004F40A2 /* PomodoroTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB4D7642B55E0AC004F40A2 /* PomodoroTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerApp.swift; sourceTree = "<group>"; };
 		BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD1BBDB12BA669BB001C0E20 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BD1BBDB62BA67310001C0E20 /* Break_End.wav */,
+				BD1BBDB22BA669D0001C0E20 /* Achievement_Bell.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		BDB4D7582B55E0AC004F40A2 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +108,8 @@
 		BDB4D7632B55E0AC004F40A2 /* PomodoroTimer */ = {
 			isa = PBXGroup;
 			children = (
+				BD1BBDB12BA669BB001C0E20 /* Sounds */,
+				BD9D1A302B6B924C00E62BC5 /* Info.plist */,
 				BDB4D78E2B55E0E3004F40A2 /* TimerView.swift */,
 				BDB4D7992B55E30E004F40A2 /* Components */,
 				BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */,
@@ -225,8 +241,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1BBDB72BA67310001C0E20 /* Break_End.wav in Resources */,
 				BDB4D76C2B55E0AF004F40A2 /* Preview Assets.xcassets in Resources */,
 				BDB4D7692B55E0AF004F40A2 /* Assets.xcassets in Resources */,
+				BD1BBDB32BA669D0001C0E20 /* Achievement_Bell.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -398,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -416,8 +434,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PomodoroTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = 2AW63KRHL5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PomodoroTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,8 +464,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PomodoroTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = 2AW63KRHL5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PomodoroTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -467,12 +489,14 @@
 		BDB4D7892B55E0AF004F40A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Semanur-Yildirim.PomodoroTimerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,12 +510,14 @@
 		BDB4D78A2B55E0AF004F40A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Semanur-Yildirim.PomodoroTimerTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,13 +531,18 @@
 		BDB4D78C2B55E0AF004F40A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AW63KRHL5;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Semanur-Yildirim.PomodoroTimerUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -522,13 +553,18 @@
 		BDB4D78D2B55E0AF004F40A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2AW63KRHL5;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Semanur-Yildirim.PomodoroTimerUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

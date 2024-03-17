@@ -7,16 +7,24 @@
 
 
 import Foundation
+import AVFoundation
 
 struct TimerManager {
+    
     private var duration = Duration.init(minutes: 30) // initial working duration of 30 minutes
     private var isRunning = false
     private var progress = Progress()
     private var sessions = 1 // counts finished working intervals
     private var mode = Mode.working // timer starts in "working" mode
+    private var player: AVAudioPlayer!
     
     enum Mode {
         case working, resting
+    }
+    
+    enum breakMode {
+        case short(duration: Int)
+        case long(duration: Int)
     }
     
     func getProgress() -> Double {
@@ -35,15 +43,16 @@ struct TimerManager {
             case(.working):
                 sessions += 1
                 startBreak()
+                playSound(resource: "Achievement_Bell")
             case(.resting):
                 resetTimer()
+                playSound(resource: "Break_End")
             }
         case(_, _):
             self.mode == .working ? progress.update(val: 30*60): progress.update(val: breakDuration * 60)
             duration.decrease()
         }
     }
-    
     
     private var breakDuration : Int = 5 // holds break duration. initial value: short break duration
     private var shortBreak = 5
@@ -67,6 +76,19 @@ struct TimerManager {
     
     mutating func resetSessions() {
         sessions = 1
+    }
+    
+    mutating func playSound(resource: String) {
+        let url = Bundle.main.url(forResource: resource, withExtension: "wav")
+        guard url != nil else {
+            return
+        }
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            player?.play()
+        } catch {
+            print("\(String(describing: url)) - No Sound found.")
+        }
     }
     
     func formatTime() -> String {

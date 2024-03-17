@@ -64,7 +64,6 @@ struct TimerView : View {
             .foregroundStyle(Color.gray)
     }
     
-    
     private var progressRing : some View {
         ZStack(alignment: .center) {
             basisCircle
@@ -83,7 +82,6 @@ struct TimerView : View {
             resetSessionsButton
         }
         .font(.system(size: 20, weight: .bold))
-        
     }
     
     // components used for the progress ring:
