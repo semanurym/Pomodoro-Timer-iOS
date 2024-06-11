@@ -8,6 +8,8 @@ For iOS devices 📱
 - **5-minute short breaks** for a quick energy boost 💥
 - **20-minute long breaks** for a refreshing timeout 🏖️
 
+- **Choose between provided themes of the app**
+
 ### How it works:
 1. The timer starts with the working mode.
 2. After each work interval, the timer automatically switches to a short break.

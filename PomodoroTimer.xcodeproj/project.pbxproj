@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BD1BBDB32BA669D0001C0E20 /* Achievement_Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD1BBDB22BA669D0001C0E20 /* Achievement_Bell.wav */; };
 		BD1BBDB72BA67310001C0E20 /* Break_End.wav in Resources */ = {isa = PBXBuildFile; fileRef = BD1BBDB62BA67310001C0E20 /* Break_End.wav */; };
+		BD23FB2C2BFADA9D0056741C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23FB2B2BFADA9D0056741C /* SettingsView.swift */; };
+		BD3355942C038ABD00291BA8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3355932C038ABD00291BA8 /* Theme.swift */; };
 		BDB4D7652B55E0AC004F40A2 /* PomodoroTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB4D7642B55E0AC004F40A2 /* PomodoroTimerApp.swift */; };
 		BDB4D7692B55E0AF004F40A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */; };
 		BDB4D76C2B55E0AF004F40A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDB4D76B2B55E0AF004F40A2 /* Preview Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		BD1BBDB22BA669D0001C0E20 /* Achievement_Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Achievement_Bell.wav; path = "../../../Coding Projects/Sound Effects/Achievement_Bell.wav"; sourceTree = "<group>"; };
 		BD1BBDB62BA67310001C0E20 /* Break_End.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Break_End.wav; path = ../../../../Downloads/Break_End.wav; sourceTree = "<group>"; };
+		BD23FB2B2BFADA9D0056741C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BD3355932C038ABD00291BA8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BD4B08002B574DCD00A99172 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BD9D1A302B6B924C00E62BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BDB4D7612B55E0AC004F40A2 /* PomodoroTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,7 @@
 				BDB4D7682B55E0AF004F40A2 /* Assets.xcassets */,
 				BDB4D76A2B55E0AF004F40A2 /* Preview Content */,
 				BDB4D7642B55E0AC004F40A2 /* PomodoroTimerApp.swift */,
+				BD23FB2B2BFADA9D0056741C /* SettingsView.swift */,
 			);
 			path = PomodoroTimer;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				BDB4D7902B55E17B004F40A2 /* TimerManager.swift */,
 				BDB4D7922B55E188004F40A2 /* Duration.swift */,
 				BDB4D7942B55E1A0004F40A2 /* Progress.swift */,
+				BD3355932C038ABD00291BA8 /* Theme.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,11 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD23FB2C2BFADA9D0056741C /* SettingsView.swift in Sources */,
 				BDB4D7952B55E1A0004F40A2 /* Progress.swift in Sources */,
 				BDB4D7932B55E188004F40A2 /* Duration.swift in Sources */,
 				BDB4D78F2B55E0E3004F40A2 /* TimerView.swift in Sources */,
 				BDB4D7912B55E17B004F40A2 /* TimerManager.swift in Sources */,
 				BDB4D7652B55E0AC004F40A2 /* PomodoroTimerApp.swift in Sources */,
+				BD3355942C038ABD00291BA8 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
