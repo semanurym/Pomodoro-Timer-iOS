@@ -6,20 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TimerView : View {
     
     @State var timerManager = TimerManager()
     @State var timer : Timer?
     @State var isShowingPopover = false
-    @State var theme : Color = Color.pink
+    private var defaults = UserDefaults.standard
+    // TODO: LOGIC OF DEFAULTS (THEME ADJUSTMENT) NEEDS TO BE IMPROVED
     
     var body: some View {
             settingsButton
                 .offset(CGSize(width: -170, height: 0)) // reposition ?
             NavigationStack {
                 VStack(spacing: 30){
-                    // moves button to (upper) left corner
                     stateMessage
                     ZStack {
                         progressRing
@@ -77,7 +78,6 @@ struct TimerView : View {
             Text(timerManager.formatTime())
                 .font(.system(size: 50))
                 .bold()
-            // setDurationButton
         }
     }
     
@@ -91,7 +91,7 @@ struct TimerView : View {
         .font(.system(size: 20, weight: .bold))
     }
     
-    // components used for the progress ring:
+    /// components used for the progress ring:
     private var basisCircle : some View {
         Circle()
             .stroke(Color.gray.opacity(0.3), style: StrokeStyle(lineWidth: 10, lineCap: .round))
@@ -101,7 +101,7 @@ struct TimerView : View {
     private var progressBar : some View {
         Circle()
             .trim(from:0, to: timerManager.getProgress())
-            .stroke(theme.opacity(0.5), style: StrokeStyle(lineWidth: 10, lineCap: .round))
+            .stroke(defaults.getTheme().opacity(0.5), style: StrokeStyle(lineWidth: 10, lineCap: .round))
             .frame(width: 230)
             .rotationEffect(Angle(degrees: 270))
             .animation(.easeOut, value: timerManager.getProgress())
@@ -117,13 +117,13 @@ struct TimerView : View {
             Button("Reset"){    // running = true: button "reset" to reset timer to working(!) mode with it's initial duration
                 timerManager.resetTimer()
             }
-            .tint(theme.opacity(0.9))
+            .tint(defaults.getTheme().opacity(0.9))
         case false:
             Button("Start"){    // running = false: button "start" to start working mode
                 timerManager.startTimer()
                 startTimer()
             }
-            .tint(theme)
+            .tint(defaults.getTheme())
         }
     }
     
@@ -134,27 +134,20 @@ struct TimerView : View {
         .font(.system(size: 15, weight: .bold))
         .cornerRadius(100)
         .buttonStyle(.bordered)
-        .tint(theme)
+        .tint(defaults.getTheme())
     }
     
     private var settingsButton : some View {
         Button(){
-            // self.isShowingPopover = true
             isShowingPopover.toggle()
         } label: {
             Image(systemName: "gear")
         }
-        .tint(theme)
+        .tint(defaults.getTheme())
         .popover(isPresented: $isShowingPopover) {
-            SettingsView(theme: $theme)
+            SettingsView()
         }
     }
-    
-    func setTheme(selectedTheme: Color) {
-        theme = selectedTheme
-    }
-    
-    
     
 }
 

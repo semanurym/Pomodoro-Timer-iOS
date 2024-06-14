@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State var isShowingPopover = false
-    @Binding var theme : Color 
+    private var defaults = UserDefaults.standard
     
     var body: some View {
         VStack {
@@ -18,7 +18,6 @@ struct SettingsView: View {
                 .foregroundStyle(Color.gray)
                 .bold()
                 .padding(.top)
-                .monospaced()
             
             Spacer()
             
@@ -28,19 +27,19 @@ struct SettingsView: View {
                         ForEach(Theme.allCases, id: \.self) {
                             color in
                             Button(color.id, action: {
-                                theme = color.mainColor 
+                                defaults.updateTheme(selectedColor: color)
                             })
                         }
                     }
-                    .tint(theme)
-                    .monospaced()
+                    .tint(
+                        Color(defaults.getTheme())
+                    )
                 }
             }
         }
     }
-    
 }
 
 #Preview {
-    SettingsView(theme: .constant(.pink))
+    SettingsView()
 }
